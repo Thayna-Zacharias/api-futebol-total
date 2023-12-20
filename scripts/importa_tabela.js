@@ -1,5 +1,6 @@
 import mysql from 'mysql2/promise';
 import axios from 'axios';
+import 'dotenv/config';
 
 async function main() {
     const connection = mysql.createPool({
@@ -61,7 +62,7 @@ async function getTabela() {
             season: 2023,
         },
         headers: {
-            'X-RapidAPI-Key': '25eb0c4494msh9d29717fb6b691cp1e97b7jsn9b8a99043e70',
+            'X-RapidAPI-Key': process.env.API_KEY,
             'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
         },
     };
